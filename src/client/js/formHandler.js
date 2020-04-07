@@ -14,13 +14,18 @@ function handleSubmit(event) {
 
     console.log("::: Form Submitted :::")
 
+    if (!input_url.length) {
+      errorDiv.innerHTML = `<p class="error-text">You have not entered a URL</p>`
+      errorDiv.style.visibility = 'visible';
+      return;
+    }
     if (Client.validateUrl(input_url)) {
 
       // Hide error messages
       errorDiv.style.visibility = 'hidden';
       
       // Clear previous form results and tell users that new results are loading
-      polarity.innerHTML = `<h3 class="polarity">Loading</h3>`;
+      polarity.innerHTML = `<h3 class="polarity">Loading...Please wait...</h3>`;
       subjectivity.innerHTML = "";
       text.innerHTML = "";
       
@@ -33,7 +38,7 @@ function handleSubmit(event) {
       })
     } else {
       // Display error message 
-      errorDiv.innerHTML = `<p class="error-text">You have entered an invalid url. Please try again</p>`
+      errorDiv.innerHTML = `<p class="error-text">You have entered an invalid URL. Please try again</p>`
       errorDiv.style.visibility = 'visible';
     }
     

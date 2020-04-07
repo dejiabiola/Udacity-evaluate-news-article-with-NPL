@@ -9,7 +9,7 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   mode: 'production',
-  entry: './src/client/index.js',
+  entry: ['babel-polyfill', './src/client/index.js'],
   optimization: {
     minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})]
   },
