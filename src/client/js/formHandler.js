@@ -59,4 +59,4 @@ function uiUpdate(data) {
                     `
 }
 
-export { handleSubmit, postData }
+export { handleSubmit, postData, uiUpdate }

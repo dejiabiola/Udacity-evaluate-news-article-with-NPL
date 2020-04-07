@@ -42,4 +42,3 @@ app.get('/test', function (req, res) {
 app.post('/article', requestHandler.getArticle)
 
 
-
