@@ -7,10 +7,19 @@ body {
 }
 
 main {
+    margin-top: 100px;
+    display: flex;
     flex: 2;
+    flex-direction: row;
+    width: 100%;
+    width: 100vw;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
-section {
-    max-width: 800px;
-    margin: 50px auto;
+main section:first-of-type {
+    // width: 800px;
+    // margin: 50px auto;
+    width: 600px;
+    margin-left: 50px;
 }

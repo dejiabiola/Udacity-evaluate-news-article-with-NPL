@@ -42,15 +42,21 @@ function uiUpdate(data) {
   const subjectivity = document.getElementById('subjectivity-div');
   const text = document.getElementById('text-div');
 
-  polarity.innerHTML = `<p class="polarity"><strong>Polarity:</strong> ${data.polarity}</p>
-                        <p class="polarity-confidence"><strong>Confidence:</strong> ${data.polarity_confidence}</p>
+  polarity.innerHTML = `<h3 class="polarity">Polarity:</h3>
+                        <p>${data.polarity}</p>
+                        <h4 class="polarity-confidence">Polarity Confidence:</h4>
+                        <p>${data.polarity_confidence}</p>
                         `
 
-  subjectivity.innerHTML = `<p class="subjectivity"><strong>Subjectivity:</strong> ${data.subjectivity}</p>
-                        <p class="subjectivity-confidence"><strong>Confidence:</strong> ${data.subjectivity_confidence}</p>
-                        `
+  subjectivity.innerHTML = `<h3 class="subjectivity">Subjectivity:</h3>
+                            <p>${data.subjectivity}</p>
+                            <h4 class="subjectivity-confidence">Subjectivity Confidence:</h4>
+                            <p>${data.subjectivity_confidence}</p>
+                            `
 
-  text.innerHTML = `<p class="text"><strong>Text:</strong> ${data.text}</p>`
+  text.innerHTML = `<h3 class="text">Text:</h3>
+                    <p>${data.text}</p>
+                    `
 }
 
 export { handleSubmit, postData }

@@ -1,0 +1,32 @@
+#results {
+  padding: 40px;
+  max-width: 100%;
+  border: 1px solid #545454;
+  padding: 40px;
+  margin-top: 20px;
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: underline;
+    font-weight: 700;
+  }
+
+  h3,h4 {
+    margin-bottom: 13px;
+  }
+
+  p {
+    margin-bottom: 30px;
+    line-height: 1.2;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  h4 {
+    font-weight: 600;
+  }
+}

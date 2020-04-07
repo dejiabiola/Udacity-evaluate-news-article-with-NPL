@@ -3,7 +3,7 @@ const aylien = require('aylien_textapi');
 
 
 
-function getResult(req,res) {
+function getArticle(req,res) {
   // Set aylien API credentials
   var textapi = new aylien({
     application_id: process.env.API_ID,
@@ -23,4 +23,6 @@ function getResult(req,res) {
 
 
 
-exports.getResult = getResult;
+
+
+exports.getArticle = getArticle;
