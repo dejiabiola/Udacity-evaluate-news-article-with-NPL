@@ -2,19 +2,23 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Test</title>
+        <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
+        <title>Evaluate news article with NLP</title>
     </head>
 
     <body>
 
         <header>
             <h1>Evaluate News Article with Natural Processing Language</h1>
-            <p>This is an AI app powered by the AYLIEN API that can predict </p>
+            <p>This is an AI app powered by the AYLIEN API that can predict the polarity and subjectivity of news articles and blogpost.</p>
+            <p>Enter a valid url link to an article or blogpost in the form below and click submit</p>
         </header>
 
         <main>
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
+                  <div id="error-div"></div>
+                  <label for="url">Please enter a url to an article or blogpost</label>
                     <input id="url" type="url" name="url-input" placeholder="Enter valid url">
                     <input class="submit-button" type="submit" name="" value="Submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
@@ -31,7 +35,7 @@
         </main>
 
         <footer>
-            <p>This is a footer</p>
+            <p>Built by <a href="https://twitter.com/deji_abiola">Deji Abiola</a></p>
         </footer>
 
         <script>

@@ -15,11 +15,49 @@ main {
     width: 100vw;
     max-width: 100%;
     margin: 0 auto;
+    margin-bottom: 30px;
+
+    section:first-of-type {
+      // width: 800px;
+      // margin: 50px auto;
+      width: 600px;
+      margin-left: 40px;
+      margin-right: 90px;
+    }
+
+    section:nth-of-type(2) {
+      width: 800px;
+      max-width: 100%;
+    }
+
 }
 
-main section:first-of-type {
-    // width: 800px;
-    // margin: 50px auto;
-    width: 600px;
-    margin-left: 50px;
+
+
+@media(max-width: 1000px) {
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    section:first-of-type {
+      width: 500px;
+      max-width: 100%;
+      margin-bottom: 30px;
+    }
+
+    section:nth-of-type(2) {
+      width: 600px;
+      max-width: 100%;
+    }
+
+  }
 }
+
+
+
+
+
+

@@ -1,5 +1,13 @@
+// Declare global variables
+const errorDiv = document.getElementById('error-div');
+const polarity = document.getElementById('polarity-div');
+const subjectivity = document.getElementById('subjectivity-div');
+const text = document.getElementById('text-div');
+
 function handleSubmit(event) {
-    event.preventDefault()
+    event.preventDefault();
+
+    
 
     // check what text was put into the form field
     let input_url = document.getElementById('url').value
@@ -7,17 +15,32 @@ function handleSubmit(event) {
     console.log("::: Form Submitted :::")
 
     if (Client.validateUrl(input_url)) {
+
+      // Hide error messages
+      errorDiv.style.visibility = 'hidden';
+      
+      // Clear previous form results and tell users that new results are loading
+      polarity.innerHTML = `<h3 class="polarity">Loading</h3>`;
+      subjectivity.innerHTML = "";
+      text.innerHTML = "";
+      
+      
+      // Call postdata passing in the input url
       postData(input_url)
       .then(function(data) {
+        // Call uiUpdate once data has been sent back from server
         uiUpdate(data);
       })
     } else {
-      console.log("email is not valid")
+      // Display error message 
+      errorDiv.innerHTML = `<p class="error-text">You have entered an invalid url. Please try again</p>`
+      errorDiv.style.visibility = 'visible';
     }
     
     
 }
 
+// Make post request to server passing in the url
 const postData = async function(url = '') {
   
   const response = await fetch('http://localhost:8080/article', {
@@ -34,13 +57,13 @@ const postData = async function(url = '') {
     return dataObject;
   } catch(error) {
     console.log('error', error);
+    errorDiv.innerHTML = `<p class="error-text">An error was encountered. Try a different url</p>`
   }
 }
 
+
+// Update the results on the UI
 function uiUpdate(data) {
-  const polarity = document.getElementById('polarity-div');
-  const subjectivity = document.getElementById('subjectivity-div');
-  const text = document.getElementById('text-div');
 
   polarity.innerHTML = `<h3 class="polarity">Polarity:</h3>
                         <p>${data.polarity}</p>
@@ -54,7 +77,7 @@ function uiUpdate(data) {
                             <p>${data.subjectivity_confidence}</p>
                             `
 
-  text.innerHTML = `<h3 class="text">Text:</h3>
+  text.innerHTML = `<h3 class="text">Article:</h3>
                     <p>${data.text}</p>
                     `
 }

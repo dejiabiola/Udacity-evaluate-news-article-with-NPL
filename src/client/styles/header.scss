@@ -1,6 +1,32 @@
-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 40px;
-    margin-bottom: 140px;
+@media(max-width: 700px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 0.3px;
+  }
 }
+
+
+header {
+    // display: flex;
+    // justify-content: space-between;
+    // padding: 10px 40px;
+    margin-bottom: 140px;
+    text-align: center;
+
+    h1 {
+      font-family: 'Bree Serif', serif;
+      font-size: 3rem;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      font-weight: bolder;
+    }
+
+    p {
+      font-size: 1.2rem;
+      padding-bottom: 10px;
+    }
+}
+
