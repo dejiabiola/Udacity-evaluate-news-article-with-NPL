@@ -1,17 +1,18 @@
 {
-  "name": "example-project",
+  "name": "evaluate-a-news-article-using-natural-processing-language",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test-watch": "jest --watchAll",
     "start": "nodemon src/server/index.js",
-    "build-prod": "webpack --config webpack.prod.js",
+    "build-prod": "npm run test && webpack --config webpack.prod.js",
     "build-dev": "webpack-dev-server --config webpack.dev.js --open"
   },
   "keywords": [],
-  "author": "",
+  "author": "Deji Abiola",
   "license": "ISC",
-  "description": "",
+  "description": "A node and express app that can process articles using the aylien_textapi",
   "dependencies": {
     "aylien_textapi": "0.7.0",
     "dotenv": "8.2.0",
@@ -23,7 +24,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
+    "@babel/plugin-transform-runtime": "7.9.0",
     "@babel/preset-env": "^7.5.4",
+    "@types/jest": "25.2.1",
     "babel-core": "6.26.3",
     "babel-loader": "8.1.0",
     "babel-polyfill": "6.26.0",

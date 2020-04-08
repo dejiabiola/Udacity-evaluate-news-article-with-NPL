@@ -10,7 +10,7 @@ function handleSubmit(event) {
     
 
     // check what text was put into the form field
-    let input_url = document.getElementById('url').value
+    let input_url = document.getElementById('url').value;
 
     console.log("::: Form Submitted :::")
 
