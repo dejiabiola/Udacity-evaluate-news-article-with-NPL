@@ -34,7 +34,7 @@ There are two environments on which you can run the app. Here's how each can be 
 
 ## Testing
 
-Jest is the tool of choice for running tests on the app. To test, run `npm test` in the terminal
+Jest is the tool of choice for running tests on the app. To test, run `npm test` in the terminal.
 
 ## API 
 
